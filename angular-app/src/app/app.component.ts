@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-app';
+  cor = 'vermelho';
+
+  botaoClick(){
+    alert('uma mensagem');
+    this.cor = (this.cor == 'azul' ? 'vermelho': 'azul') ;
+  }
+  inputKeyUp(value:any){
+    console.log(value.target.value);
+  }
 }
