@@ -6,4 +6,10 @@
 
 <button (click)="botaoClick()" >Enviar</button>
 
-<input type="text" (keyup)="inputKeyUp($event)">
+<!--input type="text" (keyup)="inputKeyUp($event)"-->
+
+<p>
+  {{ valorDigitado }}
+</p>
+
+<input type="text" [(ngModel)]="valorDigitado" >
