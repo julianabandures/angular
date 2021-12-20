@@ -7,22 +7,30 @@ import { CpfPipe } from './pipes/cpf.pipe';
 import { DebugFormComponent } from './componentes/debug-form/debug-form.component';
 import { FieldErrorComponent } from './componentes/field-error/field-error.component';
 
+
+
 @NgModule({
   declarations: [
     GrifaTextoDirective,
     CpfPipe,
     DebugFormComponent,
-    FieldErrorComponent,
+    FieldErrorComponent
   ],
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  exports: [
+  imports: [
+    CommonModule,
     HttpClientModule,
     FormsModule,
-    GrifaTextoDirective,
-    DebugFormComponent,
-    CpfPipe,
-    ReactiveFormsModule,
-    FieldErrorComponent,
+    ReactiveFormsModule
   ],
+  exports:[
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DebugFormComponent,
+    FieldErrorComponent,
+
+    GrifaTextoDirective,
+    CpfPipe
+  ]
 })
-export class SharedModule {}
+export class SharedModule { }

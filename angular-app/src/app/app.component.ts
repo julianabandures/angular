@@ -12,6 +12,7 @@ export class AppComponent {
   valorDigitado = '';
   cpfDigitado : string = '';
   msgCpf : string = '';
+
   public mask: any = {
     mask: '+{7} (000) 000-00-00',
     lazy: false
@@ -36,6 +37,8 @@ export class AppComponent {
   }
 
   onCpfBlur(){
+    console.log(this.cpfDigitado, this.cpfDigitado == '')
+    
     let cpfValido = this.testaCPF( this.cpfDigitado );
 
     if (cpfValido){
@@ -44,11 +47,17 @@ export class AppComponent {
     else {
       this.msgCpf = 'CPF não é válido';
     }
+    
+
+
+
+    // if (this.cpfDigitado == ''){
+    //   this.msgCpf = ''
+    // }
 
     //this.msgCpf = (cpfValido ? 'CPF é Válido': 'CPF não é válido');
 
   }
-  
 
   testaCPF(strCPF: string) {
     var Soma;
@@ -70,6 +79,4 @@ export class AppComponent {
     if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
   }
-
-
 }

@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormulariosService } from '../formularios.service';
 
 @Component({
   selector: 'app-meu-form',
@@ -16,7 +18,10 @@ export class MeuFormComponent implements OnInit {
     }
   );
 
-  constructor(private fb : FormBuilder) {
+  constructor(
+    private fb : FormBuilder, 
+    private formularioService : FormulariosService
+  ) {
   }
 
   ngOnInit(): void {
@@ -35,5 +40,15 @@ export class MeuFormComponent implements OnInit {
 
   isValid(control :string){
     return (this.getControl(control)?.valid == false && this.getControl(control)?.touched)
+  }
+
+  onSubmit(){
+    console.log(this.meuForm.value)
+    this.formularioService.salvar(this.meuForm.value)
+      .subscribe(
+        (resposta : any)=>{
+          console.log (resposta)
+        }
+      );
   }
 }

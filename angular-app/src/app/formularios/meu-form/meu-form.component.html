@@ -1,6 +1,6 @@
 <p grifaTexto> Oi</p>
 <h2 grifaTexto></h2>
-<form [formGroup]="meuForm">
+<form [formGroup]="meuForm" (submit)="onSubmit()" >
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" [class.is-invalid]="isValid('email')" id="exampleInputEmail1" formControlName="email" >
@@ -34,5 +34,5 @@
         <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="checkme">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary" >Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!meuForm.valid" >Submit</button>
 </form>

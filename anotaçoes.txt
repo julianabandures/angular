@@ -1,4 +1,10 @@
 https://wordpad.cc/share/gLK0L0nm
+
+
+https://docs.google.com/presentation/d/15AmmKOFWYxO5Spa78rRYfnN5y4qKvGqEiXK5PXlLUCs/edit#slide=id.p
+
+
+https://rxjs.dev/deprecations/subscribe-arguments
 ---------------------------------------
 
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';

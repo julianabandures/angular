@@ -12,4 +12,8 @@ export class MeuPrimeiroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    alert("click")
+  }
+
 }

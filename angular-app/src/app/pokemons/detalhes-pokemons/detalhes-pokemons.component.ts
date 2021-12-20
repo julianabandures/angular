@@ -1,11 +1,11 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-detalhes-pokemons',
   templateUrl: './detalhes-pokemons.component.html',
   styleUrls: ['./detalhes-pokemons.component.css']
 })
-export class DetalhesPokemonsComponent implements OnInit {
+export class DetalhesPokemonsComponent implements OnInit, OnChanges {
 
   @Input()
   pokemonSelecionadoDetalhe : any = null;
@@ -15,11 +15,16 @@ export class DetalhesPokemonsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.pokemonSelecionadoDetalhe)
+  ngOnChanges(): void {
+    console.log(this.pokemonSelecionadoDetalhe);
 
     let id = this.extrairIdUrl(this.pokemonSelecionadoDetalhe.url);
     this.emitirIdPokemon.emit(id);
+  }
+
+
+  ngOnInit(): void {
+    //console.log(this.pokemonSelecionadoDetalhe)
   }
 
   /**

@@ -3,13 +3,16 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-debug-form',
   templateUrl: './debug-form.component.html',
-  styleUrls: ['./debug-form.component.css'],
+  styleUrls: ['./debug-form.component.css']
 })
 export class DebugFormComponent implements OnInit {
+
   @Input()
-  controlFilho: any;
+  controlFilho : any;
+  
+  constructor() { }
 
-  constructor() {}
+  ngOnInit(): void {
+  }
 
-  ngOnInit(): void {}
 }
